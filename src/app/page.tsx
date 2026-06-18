@@ -41,9 +41,24 @@ export default function Home() {
     }
   };
 
-  const handleDownloadQr = () => {
+  const handleDownloadQr = async () => {
     const svg = document.getElementById("qr-code-svg");
     if (!svg) return;
+
+    // Track download in background
+    try {
+      fetch('https://jumatberbagi.my.id/api/track-qr-download', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json',
+        },
+        body: JSON.stringify({ nik: nik })
+      }).catch(e => console.error("Tracking failed:", e));
+    } catch (e) {
+      // Ignore tracking errors
+    }
+
     const svgData = new XMLSerializer().serializeToString(svg);
     const canvas = document.createElement("canvas");
     const ctx = canvas.getContext("2d");
