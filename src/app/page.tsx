@@ -66,6 +66,22 @@ export default function Home() {
     
     img.src = "data:image/svg+xml;base64," + btoa(unescape(encodeURIComponent(svgData)));
   };
+  const isUnderConstruction = true;
+
+  if (isUnderConstruction) {
+    return (
+      <main className="min-h-screen bg-gray-50 flex flex-col items-center justify-center py-12 px-4 sm:px-6 lg:px-8 font-sans text-center">
+        <h1 className="text-4xl font-extrabold text-gray-900 tracking-tight mb-4">
+          PSTORE <span className="text-blue-600">Berbagi</span>
+        </h1>
+        <div className="bg-yellow-50 border border-yellow-200 p-8 rounded-2xl max-w-md w-full shadow-sm flex flex-col items-center">
+          <span className="text-6xl mb-4">🚧</span>
+          <h2 className="text-xl font-bold text-yellow-800 mb-2">Sistem Sedang Dibangun</h2>
+          <p className="text-sm text-yellow-700">Mohon maaf, Sistem Pengecekan NIK saat ini sedang dalam tahap pengembangan dan pemeliharaan rutin. Silakan kembali lagi nanti.</p>
+        </div>
+      </main>
+    );
+  }
 
   return (
     <main className="min-h-screen bg-gray-50 flex flex-col items-center py-12 px-4 sm:px-6 lg:px-8 font-sans">
