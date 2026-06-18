@@ -24,8 +24,9 @@ export default function Home() {
     setResult(null);
 
     try {
-      // Menembak API Laravel
-      const response = await fetch(`https://jumatberbagi.my.id/api/cek-nik/${nik}`);
+      // Menembak API Laravel Lokal (karena kode enkripsi baru ada di lokal)
+      // Nanti jika sudah di-upload ke hosting, kembalikan ke https://jumatberbagi.my.id/api/cek-nik/${nik}
+      const response = await fetch(`http://127.0.0.1:8000/api/cek-nik/${nik}`);
       const data = await response.json();
 
       if (response.ok && data.success) {
