@@ -207,18 +207,16 @@ export default function Home() {
               <dl className="divide-y divide-gray-100">
                 <div className="px-4 py-3 sm:grid sm:grid-cols-3 sm:gap-4">
                   <dt className="text-xs font-medium text-gray-500">Nama Lengkap</dt>
-                  <dd className="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2 font-medium">{result.data.nama}</dd>
+                  <dd className="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2 font-medium">
+                    {result.data.nama.length > 3 
+                      ? result.data.nama.substring(0, 3) + '*'.repeat(result.data.nama.length - 3) 
+                      : result.data.nama}
+                  </dd>
                 </div>
                 <div className="px-4 py-3 sm:grid sm:grid-cols-3 sm:gap-4">
                   <dt className="text-xs font-medium text-gray-500">NIK</dt>
                   <dd className="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2 font-mono">{result.data.nik}</dd>
                 </div>
-                {result.data.tempat_tgl_lahir && (
-                  <div className="px-4 py-3 sm:grid sm:grid-cols-3 sm:gap-4">
-                    <dt className="text-xs font-medium text-gray-500">TTL</dt>
-                    <dd className="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">{result.data.tempat_tgl_lahir}</dd>
-                  </div>
-                )}
                 {result.data.alamat_ktp && (
                   <div className="px-4 py-3 sm:grid sm:grid-cols-3 sm:gap-4">
                     <dt className="text-xs font-medium text-gray-500">Alamat</dt>
