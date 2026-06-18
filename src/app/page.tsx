@@ -66,7 +66,7 @@ export default function Home() {
     
     img.src = "data:image/svg+xml;base64," + btoa(unescape(encodeURIComponent(svgData)));
   };
-  const isUnderConstruction = true;
+  const isUnderConstruction = false;
 
   if (isUnderConstruction) {
     return (
