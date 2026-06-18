@@ -152,7 +152,8 @@ export default function Home() {
                 <QRCodeSVG 
                   id="qr-code-svg"
                   value={result.data.encrypted_nik || result.data.nik} 
-                  size={200}
+                  size={1024}
+                  style={{ width: '250px', height: '250px' }}
                   level={"H"}
                   includeMargin={false}
                 />
