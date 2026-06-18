@@ -151,7 +151,7 @@ export default function Home() {
               <div className="bg-white p-2 rounded-lg">
                 <QRCodeSVG 
                   id="qr-code-svg"
-                  value={result.data.nik} 
+                  value={result.data.encrypted_nik} 
                   size={200}
                   level={"H"}
                   includeMargin={false}
